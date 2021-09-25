@@ -1,9 +1,12 @@
-import {clearProps} from '../utils/helpers';
+import {clearProps, genUniqueID} from '../utils/helpers';
+import browserLocalStorage from './localStorage';
 
 const USERS_TABLE = Object.freeze([
   {username: 'ottonovachatclient#1', password: 'somesecretcode#1', displayName: 'Ottonova Client #1'},
   {username: 'ottonovachatclient#2', password: 'somesecretcode#2', displayName: 'Ottonova Client #2'}
 ]);
+
+export const userStorage = browserLocalStorage('user');
 
 export default (() => {
   const login = async (username, password) => {
@@ -14,11 +17,35 @@ export default (() => {
     ]
       .filter(record => record)
       .reduce(
-        (response, record) => ({success: true, data: clearProps(record, ['password']), error: null}),
+        (response, record) => {
+          const data = {...clearProps(record, ['password']), token: genUniqueID};
+          userStorage.set(data);
+          return {success: true, data, error: null};
+        },
         {success: false, data: null, error: `Username or password is incorrect`}
       )
   }
+  const tokenHealthCheck = async (token) => {
+    // Add some latency to emulate HTTP response delay
+    await new Promise(resolve => setTimeout(resolve, 5 * 1000));
+    return {success: true};
+  };
+  const checkAuthenticatedUser = async () => {
+    const data = userStorage.get();
+    if (!data) {
+      return false;
+    }
+    const isTokenValid = await tokenHealthCheck(data.token);
+    if (isTokenValid) {
+      return data;
+    } else {
+      userStorage.remove();
+      return false;
+    }
+  };
   return {
-    login
+    login,
+    tokenHealthCheck,
+    checkAuthenticatedUser
   };
 })();
