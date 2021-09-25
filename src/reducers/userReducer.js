@@ -1,4 +1,4 @@
-import { USER_LOGIN_SUCCESS, USER_LOGIN_FAILED, USER_LOGIN } from "../actions/userActions";
+import { USER_LOGIN_SUCCESS, USER_LOGIN_FAILED, USER_LOGIN } from '../actions/userActions';
 
 const initialState = {
   current: null,

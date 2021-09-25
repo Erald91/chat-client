@@ -28,7 +28,7 @@ export default (() => {
   const tokenHealthCheck = async (token) => {
     // Add some latency to emulate HTTP response delay
     await new Promise(resolve => setTimeout(resolve, 5 * 1000));
-    return {success: true};
+    return {success: false};
   };
   const checkAuthenticatedUser = async () => {
     const data = userStorage.get();

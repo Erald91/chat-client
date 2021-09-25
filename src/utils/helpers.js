@@ -9,3 +9,7 @@ export const clearProps = (dataObject, props = []) => {
   });
   return clone;
 };
+
+export const genUniqueID = () => {
+  return (Math.floor(Math.random() * 1000) * Date.now()).toString(32);
+};
