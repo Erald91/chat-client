@@ -1,0 +1,69 @@
+$borderRadius: 20px;
+$inputBoxShadowOnFocus: 0 0 5px rgba(0,80,80,.4);
+
+.login-container {
+  &_main-row {
+    &_form-col {
+
+      @media (min-width: 768px) {
+        width: 400px;
+      }
+
+      background-color: #fff;
+      border: 1px solid #ccc;
+      box-shadow: 0 5px 5px rgb(0 0 0 / 40%);
+      border-radius: $borderRadius;
+      margin: 5em auto;
+
+      .login-form-header {
+        color: $mainColor;
+        margin-top: 20px;
+        margin-bottom: 10px
+      }
+
+      .custom-input {
+        width: 100%;
+        border: 0px solid transparent;
+        border-radius: 0;
+        border-bottom: 1px solid #aaa;
+        padding: 1em .5em .5em;
+        padding-left: 2em;
+        outline: none;
+        margin: 1.5em auto;
+        transition: all .5s ease;
+
+        &.is-invalid {
+          &:focus {
+            box-shadow: $inputBoxShadowOnFocus;
+          }
+        }
+
+        &:focus {
+          border-bottom-color: $mainColor;
+          box-shadow: $inputBoxShadowOnFocus;
+          border-radius: 4px;
+        }
+      }
+
+      .custom-button {
+        transition: all .5s ease;
+        width: 70%;
+        border-radius: 30px;
+        color:$mainColor;
+        font-weight: 600;
+        background-color: #fff;
+        border: 1px solid $mainColor;
+        margin-top: 1.5em;
+        margin-bottom: 1em;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+
+        &:focus, &:hover {
+          background-color: $mainColor;
+	        color:#fff;
+        }
+      }
+    }
+  }
+}

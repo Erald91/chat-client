@@ -4,8 +4,6 @@ import authService from '../../services/authService';
 import { useDispatch } from 'react-redux';
 import { successLogin } from '../../actions/userActions';
 
-import './styles.scss';
-
 const Main = ({children}) => {
   const [loading, updateLoading] = useState(true);
   const dispatch = useDispatch();
