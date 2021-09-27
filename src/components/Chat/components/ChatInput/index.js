@@ -16,7 +16,7 @@ const ChatInput = ({onSend, onMessageChange, value}) => {
         onChange={onMessageChange}
         onKeyUp={onKeyUp}
       />
-      <Button className="chat-input-container_button" variant="outline-secondary" id="button-addon2" onClick={onSend}>
+      <Button className="chat-input-container_button" variant="outline-secondary" id="button-addon2" onClick={() => onSend()}>
         Send
       </Button>
     </InputGroup>
