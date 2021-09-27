@@ -2,7 +2,8 @@ import {memo, useState, useRef, useEffect} from 'react';
 import {Redirect, useLocation} from 'react-router-dom';
 import {useSelector, useDispatch} from 'react-redux';
 import {isUserLogged, isLoginProgress, getLoginError} from '../../selectors/userSelectors';
-import {Row, Container, Col, Form, Button, Spinner} from 'react-bootstrap';
+import {Row, Container, Col, Form, Spinner} from 'react-bootstrap';
+import Button from '../Button';
 import Alerting from '../Alerting';
 import {loginUser} from '../../actions/userActions';
 
@@ -81,7 +82,7 @@ const Login = () => {
                     Please provide password.
                   </Form.Control.Feedback>
                 </Form.Group>
-                <Button className="custom-button" variant="primary" type="submit" disabled={isProgress}>
+                <Button variant="primary" type="submit" disabled={isProgress}>
                   {isProgress ? <Spinner animation="border" as="span" role="status" size="sm" /> : 'Submit'}
                 </Button>
               </Form>

@@ -1,0 +1,15 @@
+.message-bubble-container {
+  background-color: $mainColor;
+  color: #fff;
+  border-radius: 5px;
+  max-width: 70%;
+  min-width: 10%;
+  padding: 1em 0.5em 1em;
+  text-align: left;
+  margin-right: auto;
+  margin-bottom: 0.5em;
+
+  &.me {
+    margin-left: auto;
+  }
+}

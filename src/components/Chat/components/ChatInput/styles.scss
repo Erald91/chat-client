@@ -1,0 +1,17 @@
+.chat-input-container {
+  width: 100%;
+
+  &_input {
+    @include customInput;
+    width: inherit;
+    margin: 0;
+    border: 1px solid $borderColor;
+    padding: 1em 0.5em 1em!important;
+    padding-left: inherit;
+  }
+
+  &_button {
+    width: auto!important;
+    margin: 0;
+  }
+}

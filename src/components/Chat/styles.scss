@@ -1,0 +1,19 @@
+.chat-container {
+  flex: 1;
+  height: 100%;
+
+  &_main-row {
+    height: 100%;
+
+    &_col {
+      display: flex;
+      flex-direction: column;
+
+      &_content {
+        flex: 1;
+        padding-right: calc(var(--bs-gutter-x) * 0.5);
+        padding-left: calc(var(--bs-gutter-x) * 0.5);
+      }
+    }
+  }
+}

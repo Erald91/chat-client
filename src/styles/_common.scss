@@ -1,0 +1,23 @@
+@mixin customInput {
+  width: 100%;
+  border: 0px solid transparent;
+  border-radius: 0;
+  border-bottom: 1px solid #aaa;
+  padding: 1em .5em .5em;
+  padding-left: 2em;
+  outline: none;
+  margin: 1.5em auto;
+  transition: all .5s ease;
+
+  &.is-invalid {
+    &:focus {
+      box-shadow: $inputBoxShadowOnFocus;
+    }
+  }
+
+  &:focus {
+    border-bottom-color: $mainColor;
+    box-shadow: $inputBoxShadowOnFocus;
+    border-radius: 4px;
+  }
+}

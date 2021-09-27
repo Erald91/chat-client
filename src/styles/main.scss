@@ -1,5 +1,13 @@
 @import './variables';
+@import './common';
 
 @import '../components/Main/styles';
 @import '../components/Login/styles';
 @import '../components/Navigation/styles';
+@import '../components/Chat/styles';
+@import '../components/Button/styles';
+@import '../components/Chat/components/ChatInput/styles';
+@import '../components/Chat/components/ChatMessages/styles';
+@import '../components/Chat/components/MessageBubble/styles';
+@import '../components/Chat/components/Widgets/styles';
+@import '../components/Chat/components/Widgets/components/BaseWidget/styles';

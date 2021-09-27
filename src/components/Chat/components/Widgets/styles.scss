@@ -1,0 +1,18 @@
+.widgets-container {
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  display: flex;
+  align-items: center;
+
+  &_label {
+    display: flex;
+    align-items: center;
+    padding-right: 0.5em;
+  }
+
+  &_trigger {
+    width: auto;
+    margin-left: inherit;
+    margin-right: inherit;
+  }
+}
