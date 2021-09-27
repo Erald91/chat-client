@@ -9,7 +9,7 @@ The application doesn't offer a proper authentication against a remote authority
 
 ## Structure
 
-The application uses React and Redux and the project structure shows it clearly were we have separate folders for `actions`, `reducers`, and `selectors`. Reusable business logic is added under `services` folder (functionality related with authentication and Socket IO) and all React based components are created in `components` folder. 
+The application uses React and Redux and the project structure shows it clearly were we have separate folders for `actions`, `reducers` and `selectors`. Reusable business logic is added under `services` folder (functionality related with authentication and Socket IO) and all React based components are created in `components` folder. 
 
 Project uses SASS and the main entry point for importing all stylesheets is `styles/main.scss`.
 
@@ -31,12 +31,12 @@ yarn start
 
 Now we are ready to work and test application locally.
 
-To create minified assets and prepare build for production deployment we need to run (which creates `build` folder):
+To create minified assets and prepare build for production deployment we need to run command (which creates `build` folder):
 
 ```
 yarn build
 ```
 
-## Google API Key
+## Google Map API Key
 
-To implement Map Widget we are using Google Map API and for the service to work properly we need to define a valid key so the map is rendered correctly. For this to work you can create `.env` file in the root folder and define `REACT_APP_GOOGLE_API_KEY` environment variable with the key that will be provided to map service.
+To implement Map Widget we are using Google Map API and for the service to work properly we need to define a valid key so the map is rendered correctly. For this to work we can create `.env` file in the root folder and define `REACT_APP_GOOGLE_API_KEY` environment variable with the key that will be provided to map service.

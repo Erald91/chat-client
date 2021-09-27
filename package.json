@@ -1,5 +1,5 @@
 {
-  "name": "chat-client-ottonova",
+  "name": "chat-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
