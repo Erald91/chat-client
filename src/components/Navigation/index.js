@@ -15,7 +15,7 @@ const Navigation = () => {
   return (
     <Navbar className="navigation-container" bg="light">
       <Container>
-        <Navbar.Brand>Ottonova Chat</Navbar.Brand>
+        <Navbar.Brand>Chat client</Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           <NavDropdown title={user.displayName} id="navbarScrollingDropdown">

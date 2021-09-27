@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# Chat client implementation build on top of React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project provides a simple interface that allows user to authenticate and exchange messages through chat servers build with Socket IO.
 
-## Available Scripts
+The application doesn't offer a proper authentication against a remote authority and for the moment is using hard coded credentials validated in the UI side:
 
-In the project directory, you can run:
+- `Client #1`: **chatclient#1/somesecretcode#1**
+- `Client #2`: **chatclient#2/somesecretcode#2**
 
-### `yarn start`
+## Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The application uses React and Redux and the project structure shows it clearly were we have separate folders for `actions`, `reducers`, and `selectors`. Reusable business logic is added under `services` folder (functionality related with authentication and Socket IO) and all React based components are created in `components` folder. 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Project uses SASS and the main entry point for importing all stylesheets is `styles/main.scss`.
 
-### `yarn test`
+## Install instructions
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Project uses `yarn` as a package manager and before working in the project make sure you have it installed.
 
-### `yarn build`
+To start with local setup we need initially to install project dependencies:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+yarn add
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+After that we just need to start the local development server:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+yarn start
+```
 
-### `yarn eject`
+Now we are ready to work and test application locally.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+To create minified assets and prepare build for production deployment we need to run (which creates `build` folder):
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+yarn build
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Google API Key
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+To implement Map Widget we are using Google Map API and for the service to work properly we need to define a valid key so the map is rendered correctly. For this to work you can create `.env` file in the root folder and define `REACT_APP_GOOGLE_API_KEY` environment variable with the key that will be provided to map service.

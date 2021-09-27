@@ -2,8 +2,8 @@ import {clearProps, genUniqueID} from '../utils/helpers';
 import browserLocalStorage from './localStorage';
 
 const USERS_TABLE = Object.freeze([
-  {username: 'ottonovachatclient#1', password: 'somesecretcode#1', displayName: 'Ottonova Client #1'},
-  {username: 'ottonovachatclient#2', password: 'somesecretcode#2', displayName: 'Ottonova Client #2'}
+  {username: 'chatclient#1', password: 'somesecretcode#1', displayName: 'Client #1'},
+  {username: 'chatclient#2', password: 'somesecretcode#2', displayName: 'Client #2'}
 ]);
 
 export const userStorage = browserLocalStorage('user');
