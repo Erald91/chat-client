@@ -12,7 +12,7 @@
   margin-right: auto;
   display: block;
 
-  &:focus, &:hover {
+  &:focus, &:hover, &:disabled {
     background-color: $mainColor;
     color:#fff;
   }

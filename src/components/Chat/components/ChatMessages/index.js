@@ -2,6 +2,7 @@ import {useRef, useEffect, memo} from 'react';
 import {useSelector} from 'react-redux';
 import MessageBubble from '../MessageBubble'
 import {getUserData} from '../../../../selectors/userSelectors';
+import {scrollBottom} from '../../../../utils/helpers';
 
 const ChatMessages = ({messages, height}) => {
   const user = useSelector(getUserData);
@@ -11,7 +12,7 @@ const ChatMessages = ({messages, height}) => {
       return;
     }
     // Scroll to bottom on every new message
-    containerRef.current.scrollTop = containerRef.current.scrollHeight - containerRef.current.clientHeight;
+    setTimeout(() => scrollBottom(containerRef.current), 200);
   }, [messages]);
   return (
     <div ref={containerRef} style={{height}} className='chat-messages-container'>

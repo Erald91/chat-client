@@ -9,7 +9,7 @@ import {
   updateChatWidgetClear,
   updateChatWidgetUsedCommands
 } from '../../actions/chatActions';
-import {genUniqueID} from '../../utils/helpers';
+import {genUniqueID, scrollBottom} from '../../utils/helpers';
 import {Container, Row, Col} from 'react-bootstrap';
 import ChatInput from './components/ChatInput';
 import {getUserData} from '../../selectors/userSelectors';
@@ -31,7 +31,7 @@ const Chat = () => {
     dispatch(appendChatMessages({...payload, id: genUniqueID}));
   };
   const onMessageSend = (content = message) => {
-    if (!content.trim()) {
+    if (!content || !(content && content.trim())) {
       return;
     }
     socket.current.sendMessage(user.username, content);
@@ -39,7 +39,6 @@ const Chat = () => {
     setMessage('');
   };
   const onCommand = (payload) => {
-    console.log('On command', payload);
     dispatch(updateChatWidget(payload.command.type));
     dispatch(updateChatWidgetCommand(payload.command.data));
   };
@@ -71,8 +70,9 @@ const Chat = () => {
     if (!widget) {
       return;
     }
-    document.documentElement.scrollTop = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    dispatch(updateChatWidget(widget));
+    setTimeout(() => {
+      scrollBottom(document.documentElement);
+    }, 200);
   }, [widget]);
   const onWidgetClear = () => {
     dispatch(updateChatWidgetClear());

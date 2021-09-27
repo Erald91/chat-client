@@ -1,4 +1,5 @@
 import authService from '../services/authService';
+import {updateChatMessages, updateChatWidgetClear, updateChatWidgetUsedCommandsAll} from './chatActions';
 
 export const USER_LOGIN_SUCCESS = 'User/USER_LOGIN_SUCCESS';
 export const successLogin = (payload) => ({type: USER_LOGIN_SUCCESS, payload});
@@ -24,6 +25,9 @@ export const logoutUser = (pushHistory = null) => {
   return (dispatch) => {
     authService.clearLocalData();
     dispatch(successLogin(null));
+    dispatch(updateChatMessages([]));
+    dispatch(updateChatWidgetClear());
+    dispatch(updateChatWidgetUsedCommandsAll([]));
     if (pushHistory) {
       pushHistory('/');
     } else {

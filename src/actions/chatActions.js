@@ -22,6 +22,7 @@ export const CHAT_UPDATE_WIDGET_CLEAR = 'Chat/CHAT_UPDATE_WIDGET_CLEAR';
 export const updateChatWidgetClear = () => ({type: CHAT_UPDATE_WIDGET_CLEAR});
 
 export const CHAT_UPDATE_WIDGET_USED_COMMANDS = 'Chat/CHAT_UPDATE_WIDGET_USED_COMMANDS';
+export const updateChatWidgetUsedCommandsAll = (payload) => ({type: CHAT_UPDATE_WIDGET_USED_COMMANDS, payload});
 export const updateChatWidgetUsedCommands = (command, action = 'add') => {
   return (dispatch, getState) => {
     const usedCommands = new Set([...getChatWidgetUsedCommands(getState())]);
@@ -30,6 +31,6 @@ export const updateChatWidgetUsedCommands = (command, action = 'add') => {
     } else {
       usedCommands.delete(command);
     }
-    dispatch({type: CHAT_UPDATE_WIDGET_USED_COMMANDS, payload: Array.from(usedCommands)});
+    dispatch(updateChatWidgetUsedCommandsAll(Array.from(usedCommands)));
   };
 };

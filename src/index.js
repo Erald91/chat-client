@@ -12,9 +12,7 @@ const store = createStore();
 render(
   <Router>
     <Provider store={store}>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
+      <App />
     </Provider>
   </Router>,
   document.getElementById('root')
