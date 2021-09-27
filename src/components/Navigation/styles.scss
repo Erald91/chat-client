@@ -1,0 +1,32 @@
+.navigation-container {
+  border-bottom: 1px solid $borderColor;
+  box-shadow: 0 5px 5px rgb(0 0 0 / 40%);
+
+  .navbar-brand {
+    color: $mainColor;
+
+    &:hover {
+      color: $mainColor;
+    }
+  }
+
+  .nav-item {
+    .dropdown-toggle {
+      color: $mainColor;
+
+      &:hover, &:active {
+        color: $mainColor;
+      }
+    }
+    .dropdown-menu {
+      .dropdown-item {
+        color: $mainColor;
+
+        &:hover {
+          color: #fff!important;
+          background-color: $mainColor!important;
+        }
+      }
+    }
+  }
+}

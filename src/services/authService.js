@@ -43,9 +43,13 @@ export default (() => {
       return false;
     }
   };
+  const clearLocalData = () => {
+    userStorage.remove();
+  };
   return {
     login,
     tokenHealthCheck,
-    checkAuthenticatedUser
+    checkAuthenticatedUser,
+    clearLocalData
   };
 })();

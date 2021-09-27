@@ -10,7 +10,7 @@ $inputBoxShadowOnFocus: 0 0 5px rgba(0,80,80,.4);
       }
 
       background-color: #fff;
-      border: 1px solid #ccc;
+      border: 1px solid $borderColor;
       box-shadow: 0 5px 5px rgb(0 0 0 / 40%);
       border-radius: $borderRadius;
       margin: 5em auto;
