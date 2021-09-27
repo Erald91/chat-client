@@ -20,7 +20,7 @@ Project uses `yarn` as a package manager and before working in the project make 
 To start with local setup we need initially to install project dependencies:
 
 ```
-yarn add
+yarn install
 ```
 
 After that we just need to start the local development server:
