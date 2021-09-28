@@ -15,7 +15,7 @@ Project uses SASS and the main entry point for importing all stylesheets is `sty
 
 ## Install instructions
 
-Project uses `yarn` as a package manager and before working in the project make sure you have it installed.
+Project uses `yarn` as a package manager (with NodeJS v12.22.5) and before working in the project make sure you have it installed.
 
 To start with local setup we need initially to install project dependencies:
 
